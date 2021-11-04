@@ -4,6 +4,7 @@
 
 #ifndef BINTREE_BINTREE_H
 #define BINTREE_BINTREE_H
+#include "data.h"
 
 class BinaryTree{
 
@@ -12,8 +13,8 @@ class BinaryTree{
 
 
     private:
-
-
+        DataNode *root;
+        int count;
 
 };
 
