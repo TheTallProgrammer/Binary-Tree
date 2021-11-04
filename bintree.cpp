@@ -38,6 +38,8 @@ void BinTree::clear() {
 } // End of clear
 
 bool BinTree::addNode(int id, const string *data){
+    root->data.id = id;
+    root->data.information = *data;
     addNode(root->data.id, &root->data.information);
 } // End of addNode
 
