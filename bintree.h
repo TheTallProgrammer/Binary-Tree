@@ -30,8 +30,8 @@ class BinTree{
         void displayInOrder();
 
         void clear(DataNode *);
-        bool addNode(DataNode *, DataNode *);
-        DataNode* removeNode(int, DataNode);
+        bool addNode(DataNode *, DataNode **);
+        DataNode* removeNode(int, DataNode *);
         bool getNode(Data *, int, DataNode *);
         bool contains(int, DataNode *);
         int getHeight(DataNode *);
