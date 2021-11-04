@@ -6,9 +6,10 @@
 #define BINTREE_BINTREE_H
 #include "data.h"
 
-class BinaryTree{
+class BinTree{
 
     public:
+        BinTree();
 
 
 
