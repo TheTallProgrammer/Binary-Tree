@@ -27,7 +27,7 @@ bool BinTree::getRootData(Data *data){
     return gotRootData;
 } // End of getRootData
 
-void BinTree::diplayTree(){
+void BinTree::displayTree(){
 
 } // End of displayTree
 
@@ -40,23 +40,27 @@ void BinTree::clear() {
 bool BinTree::addNode(int id, const string *data){
     root->data.id = id;
     root->data.information = *data;
-    addNode(root->data.id, &root->data.information);
+    bool didAdd = addNode(root->data.id, &root->data.information);
+    return didAdd;
 } // End of addNode
 
 bool BinTree::removeNode(int id){
-    removeNode(id, root);
+    bool didRemove = removeNode(id, root);
+    return didRemove;
 } // End of removeNode
 
 bool BinTree::getNode(Data *data, int id){
-    getNode(data, id, root);
+    bool gotNode = getNode(data, id, root);
+    return gotNode;
 } // End of getNode
 
 bool BinTree::contains(int id){
-    contains(id, root);
+    bool contained = contains(id, root);
+    return contained;
 } // End of contains
 
 int BinTree::getHeight(){
-    getHeight(root);
+   return getHeight(root);
 } // End of getHeight
 
 void BinTree::displayPreOrder(){
@@ -78,23 +82,28 @@ void BinTree::clear(DataNode *){
 } // End of clear
 
 bool BinTree::addNode(DataNode *, DataNode **){
+    bool didAdd = false;
+    return didAdd;
 
 } // End of addNode
 
 DataNode* BinTree::removeNode(int, DataNode *){
-
+    return nullptr;
 } // End of removeNode
 
 bool BinTree::getNode(Data *, int, DataNode *){
-
+    bool gotNode = false;
+    return gotNode;
 } // End of getNode
 
 bool BinTree::contains(int, DataNode *){
-
+    bool contained = false;
+    return contained;
 } // End of contains
 
 int BinTree::getHeight(DataNode *){
-
+    int height;
+    return height;
 } // End of getHeight
 
 void BinTree::displayPreOrder(DataNode *){

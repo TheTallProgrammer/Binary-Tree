@@ -17,7 +17,7 @@ class BinTree{
         bool isEmpty();
         int getCount();
         bool getRootData(Data *);
-        void diplayTree();
+        void displayTree();
 
         void clear();
         bool addNode(int, const string *);
