@@ -32,7 +32,9 @@ bool BinTree::getRootData(Data *data){
 } // End of getRootData
 
 void BinTree::displayTree(){
-
+    displayPreOrder();
+    displayInOrder();
+    displayPostOrder();
 } // End of displayTree
 
 
