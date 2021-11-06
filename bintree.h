@@ -5,6 +5,7 @@
 #ifndef BINTREE_BINTREE_H
 #define BINTREE_BINTREE_H
 #include "data.h"
+#include <iostream>
 
 class BinTree{
 

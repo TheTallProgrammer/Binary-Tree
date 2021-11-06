@@ -121,6 +121,10 @@ void BinTree::displayPostOrder(DataNode *temproot){
 } // End of displayPostOrder
 
 void BinTree::displayInOrder(DataNode *temproot){
-
+    if(temproot){
+        displayInOrder(temproot->left);
+        std::cout << temproot->data.id << " " << temproot->data.information << std::endl;
+        displayInOrder(temproot->right);
+    }
 } // End of displayInOrder
 
