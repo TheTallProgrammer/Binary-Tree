@@ -6,7 +6,8 @@
 
 // Constructor/Destructor
 BinTree::BinTree(){
-
+    root = nullptr;
+    count = 0;
 } // End of constructor
 
 BinTree::~BinTree(){
