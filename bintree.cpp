@@ -83,44 +83,44 @@ void BinTree::displayInOrder(){
 
 
 // Overload methods
-void BinTree::clear(DataNode *){
+void BinTree::clear(DataNode *temproot){
 
 } // End of clear
 
-bool BinTree::addNode(DataNode *, DataNode **){
+bool BinTree::addNode(DataNode *temproot, DataNode **rootadd){
     bool didAdd = false;
     return didAdd;
 
 } // End of addNode
 
-DataNode* BinTree::removeNode(int, DataNode *){
+DataNode* BinTree::removeNode(int id, DataNode *temproot){
     return nullptr;
 } // End of removeNode
 
-bool BinTree::getNode(Data *, int, DataNode *){
+bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
     return gotNode;
 } // End of getNode
 
-bool BinTree::contains(int, DataNode *){
+bool BinTree::contains(int id, DataNode *temproot){
     bool contained = false;
     return contained;
 } // End of contains
 
-int BinTree::getHeight(DataNode *){
+int BinTree::getHeight(DataNode *temproot){
     int height;
     return height;
 } // End of getHeight
 
-void BinTree::displayPreOrder(DataNode *){
+void BinTree::displayPreOrder(DataNode *temproot){
 
 } // End of displayPreOrder
 
-void BinTree::displayPostOrder(DataNode *){
+void BinTree::displayPostOrder(DataNode *temproot){
 
 } // End of displayPostOrder
 
-void BinTree::displayInOrder(DataNode *){
+void BinTree::displayInOrder(DataNode *temproot){
 
 } // End of displayInOrder
 
