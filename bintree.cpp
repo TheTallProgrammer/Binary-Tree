@@ -17,7 +17,10 @@ BinTree::~BinTree(){
 
 // Public methods
 bool BinTree::isEmpty(){
-    bool isEmpt = false;
+    bool isEmpt = true;
+    if(root){
+        isEmpt = false;
+    }
     return isEmpt;
 } // End of isEmpty
 
