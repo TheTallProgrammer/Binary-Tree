@@ -21,8 +21,14 @@ bool BinTree::isEmpty(){return root;} // End of isEmpty
 int BinTree::getCount(){return count;} // End of getCount
 
 bool BinTree::getRootData(Data *data){
-    bool gotRootData = false;
-    return gotRootData;
+    if(root){
+        data->id = root->data.id;
+        data->information = root->data.information;
+    } else {
+        data->id = -1;
+        data->information = "";
+    }
+    return root;
 } // End of getRootData
 
 void BinTree::displayTree(){
