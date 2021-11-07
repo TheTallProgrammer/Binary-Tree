@@ -16,9 +16,7 @@ BinTree::~BinTree(){
 
 
 // Public methods
-bool BinTree::isEmpty(){
-    return root;
-} // End of isEmpty
+bool BinTree::isEmpty(){return root;} // End of isEmpty
 
 int BinTree::getCount(){return count;} // End of getCount
 
