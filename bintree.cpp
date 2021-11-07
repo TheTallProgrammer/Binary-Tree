@@ -11,7 +11,7 @@ BinTree::BinTree(){
 } // End of constructor
 
 BinTree::~BinTree(){
-
+    clear();
 } // End of destructor
 
 
