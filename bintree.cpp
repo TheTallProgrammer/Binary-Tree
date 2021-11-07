@@ -44,9 +44,16 @@ void BinTree::clear() {
 } // End of clear
 
 bool BinTree::addNode(int id, const string *data){
-    root->data.id = id;
-    root->data.information = *data;
-    bool didAdd = addNode(root->data.id, &root->data.information);
+    bool didAdd = false;
+    if(id > 0 && data->length() > 0){
+        DataNode *newNode = new DataNode;
+        newNode->data.id = id;
+        newNode->data.information = *data;
+        didAdd = addNode(newNode->data.id, &newNode->data.information);
+        if(didAdd == true){
+            count++;
+        }
+    }
     return didAdd;
 } // End of addNode
 
@@ -96,6 +103,7 @@ void BinTree::clear(DataNode *temproot){
 
 bool BinTree::addNode(DataNode *temproot, DataNode **rootadd){
     bool didAdd = false;
+
     return didAdd;
 
 } // End of addNode
