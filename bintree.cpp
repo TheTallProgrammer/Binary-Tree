@@ -107,8 +107,13 @@ bool BinTree::addNode(DataNode *newNode, DataNode **tempRoot){
         *tempRoot = newNode;
         didAdd = true;
     }
-    addNode(newNode, &root->left);
-    addNode(newNode, &root->right);
+    else{
+        if(newNode->data.id < root->data.id){
+            addNode(newNode, &root->left);
+        } else {
+            addNode(newNode, &root->right);
+        }
+    }
     return didAdd;
 
 } // End of addNode
