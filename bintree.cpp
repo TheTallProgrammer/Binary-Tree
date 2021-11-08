@@ -101,8 +101,14 @@ void BinTree::clear(DataNode *temproot){
     }
 } // End of clear
 
-bool BinTree::addNode(DataNode *newNode, DataNode **root){
+bool BinTree::addNode(DataNode *newNode, DataNode **tempRoot){
     bool didAdd = false;
+    if(!(*tempRoot)){
+        *tempRoot = newNode;
+        didAdd = true;
+    }
+    addNode(newNode, &root->left);
+    addNode(newNode, &root->right);
     return didAdd;
 
 } // End of addNode
