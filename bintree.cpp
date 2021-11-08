@@ -68,7 +68,11 @@ bool BinTree::getNode(Data *data, int id){
 } // End of getNode
 
 bool BinTree::contains(int id){
-    bool contained = contains(id, root);
+    bool contained = false;
+    if(id > 0){
+        contained = contains(id, root);
+    }
+
     return contained;
 } // End of contains
 
