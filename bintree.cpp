@@ -91,12 +91,12 @@ void BinTree::displayInOrder(){
 
 // Overload methods
 void BinTree::clear(DataNode *temproot){
-    if(root){
-        clear(root->left);
-        clear(root->right);
-        root->left = nullptr;
-        root->right = nullptr;
-        delete root;
+    if(temproot){
+        clear(temproot->left);
+        clear(temproot->right);
+        temproot->left = nullptr;
+        temproot->right = nullptr;
+        delete temproot;
         count--;
     }
 } // End of clear
@@ -110,7 +110,7 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
     else{
         if(newNode->data.id < (*root)->data.id){
             addNode(newNode, &(*root)->left);
-        } else {
+        } else if (newNode->data.id > (*root)->data.id) {
             addNode(newNode, &(*root)->right);
         }
     }
