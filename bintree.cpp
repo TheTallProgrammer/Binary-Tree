@@ -172,7 +172,7 @@ int BinTree::getHeight(DataNode *temproot){
     if(root){
         getHeight(temproot->left);
         getHeight(temproot->right);
-        height = lh + (rh+1);
+        height = (lh + rh) +1;
     }
     return height;
 } // End of getHeight
