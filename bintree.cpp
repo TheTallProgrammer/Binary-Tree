@@ -191,7 +191,7 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
 
 bool BinTree::contains(int id, DataNode *temproot){
     bool contained = false;
-    if(root){
+    if(temproot){
         if (id == temproot->data.id) {
             contained = true;
         } else {
