@@ -170,9 +170,13 @@ bool BinTree::contains(int id, DataNode *temproot){
 int BinTree::getHeight(DataNode *temproot){
     int lh = 0, rh = 0, height = 0;
     if(root){
+        if(lh > rh){
+            height = lh + 1;
+        } else {
+            height = rh + 1;
+        }
         getHeight(temproot->left);
         getHeight(temproot->right);
-        height = (lh + rh) +1;
     }
     return height;
 } // End of getHeight
