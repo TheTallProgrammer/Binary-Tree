@@ -131,6 +131,23 @@ DataNode* BinTree::removeNode(int id, DataNode *temproot){
 
 bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
+    if(root){
+        if (id == temproot->data.id) {
+            data->id = temproot->data.id;
+            data->information = temproot->data.information;
+            gotNode = true;
+        } else {
+            if (id < temproot->data.id) {
+                contains(id, temproot->left);
+            } else {
+                contains(id, temproot->right);
+            }
+        }
+    }
+    if(!gotNode){
+        data->id = -1;
+        data->information = "";
+    }
     return gotNode;
 } // End of getNode
 
