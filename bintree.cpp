@@ -130,9 +130,42 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
 
 } // End of addNode
 
-DataNode* BinTree::removeNode(int id, DataNode *temproot){
-    return temproot;
+DataNode* BinTree::removeNode(int id, DataNode *root){
+    if(root){
+        if(id < root->data.id){
+            removeNode(id, root->left);
+        } else if (id > root->data.id){
+            removeNode(id, root->right);
+        } else {
+            DataNode *temp;
+            if(root->left == nullptr){
+                temp = root->right;
+                delete root;
+                root = temp;
+                count--;
+            } else if (root->right == nullptr){
+                temp = root->left;
+                delete root;
+                root = temp;
+                count--;
+            } else {
+                temp = minValueNode(root->right);
+                root->data.id = temp->data.id;
+                root->data.information = temp->data.information;
+                root->right = removeNode(temp->data.id, root->right);
+            }
+        }
+    }
+    return root;
 } // End of removeNode
+
+DataNode* BinTree::minValueNode(DataNode* node) {
+    DataNode* current = node;
+    while (current && current->left != NULL) {
+        current = current->left;
+    }
+    return current;
+}
 
 bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
