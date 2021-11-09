@@ -121,9 +121,9 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
     }
     else{
         if(newNode->data.id < (*root)->data.id){
-            addNode(newNode, &(*root)->left);
+            return addNode(newNode, &(*root)->left);
         } else if (newNode->data.id > (*root)->data.id) {
-            addNode(newNode, &(*root)->right);
+            return addNode(newNode, &(*root)->right);
         }
     }
     return didAdd;
@@ -133,9 +133,9 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
 DataNode* BinTree::removeNode(int id, DataNode *root){
     if(root){
         if(id < root->data.id){
-            removeNode(id, root->left);
+            return removeNode(id, root->left);
         } else if (id > root->data.id){
-            removeNode(id, root->right);
+            return removeNode(id, root->right);
         } else {
             DataNode *temp;
             if(root->left == nullptr){
