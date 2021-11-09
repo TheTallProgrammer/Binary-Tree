@@ -121,8 +121,10 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
     }
     else{
         if(newNode->data.id < (*root)->data.id){
+            std::cout << "left" << std::endl;
             return addNode(newNode, &(*root)->left);
         } else if (newNode->data.id > (*root)->data.id) {
+            std::cout << "right" << std::endl;
             return addNode(newNode, &(*root)->right);
         }
     }
@@ -206,17 +208,19 @@ bool BinTree::contains(int id, DataNode *temproot){
 } // End of contains
 
 int BinTree::getHeight(DataNode *temproot){
-    int lh = 0, rh = 0, height = 0;
+    int lh = 0, rh = 0, maxHeight = 0;
     if(temproot){
+        maxHeight = getHeight(temproot->left);
+        maxHeight = getHeight(temproot->right);
         if(lh > rh){
-            height = lh + 1;
+            maxHeight = maxHeight + lh+1;
         } else {
-            height = rh + 1;
+            maxHeight = maxHeight + rh+1;
         }
-        getHeight(temproot->left);
-        getHeight(temproot->right);
+        return maxHeight;
+    } else {
+        return 0;
     }
-    return height;
 } // End of getHeight
 
 void BinTree::displayPreOrder(DataNode *temproot){
