@@ -59,11 +59,11 @@ bool BinTree::addNode(int id, const string *data){
 
 bool BinTree::removeNode(int id){
     bool didRemove = false;
-    int tempCount = count;
-    root = removeNode(id, root);
-    if(count < tempCount){
-        didRemove = true;
-    }
+//    int tempCount = count;
+//    root = removeNode(id, root);
+//    if(count < tempCount){
+//        didRemove = true;
+//    }
     return didRemove;
 } // End of removeNode
 
@@ -77,9 +77,9 @@ bool BinTree::getNode(Data *data, int id){
 
 bool BinTree::contains(int id){
     bool contained = false;
-    if(id > 0){
-        contained = contains(id, root);
-    }
+//    if(id > 0){
+//        contained = contains(id, root);
+//    }
 
     return contained;
 } // End of contains
@@ -170,15 +170,19 @@ DataNode* BinTree::minValueNode(DataNode* node) {
 bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
     if(temproot){
+        std::cout << "temproot exists" << std::endl;
+        std::cout << "ID: " << id << " : ROOT ID: " << temproot->data.id << std::endl;
         if (id == temproot->data.id) {
             data->id = temproot->data.id;
             data->information = temproot->data.information;
             gotNode = true;
         } else {
             if (id < temproot->data.id) {
-                contains(id, temproot->left);
+                std::cout << "id is less, going left" << std::endl;
+                getNode(data, id, temproot->left);
             } else {
-                contains(id, temproot->right);
+                std::cout << "id is greater, going right" << std::endl;
+                getNode(data, id, temproot->right);
             }
         }
     }
