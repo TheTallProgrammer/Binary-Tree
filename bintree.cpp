@@ -169,7 +169,7 @@ DataNode* BinTree::minValueNode(DataNode* node) {
 
 bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
-    if(root){
+    if(temproot){
         if (id == temproot->data.id) {
             data->id = temproot->data.id;
             data->information = temproot->data.information;
