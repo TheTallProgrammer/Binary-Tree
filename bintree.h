@@ -33,7 +33,7 @@ class BinTree{
         void clear(DataNode *);
         bool addNode(DataNode *, DataNode **);
         DataNode* removeNode(int, DataNode *);
-        DataNode* BinTree::minValueNode(DataNode*);
+        DataNode* minValueNode(DataNode*);
         bool getNode(Data *, int, DataNode *);
         bool contains(int, DataNode *);
         int getHeight(DataNode *);
