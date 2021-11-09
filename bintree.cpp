@@ -133,22 +133,17 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
 
 bool BinTree::contains(int id, DataNode *temproot){
     bool contained = false;
-    int middle = count / 2;
-    for(int i = 0; i < middle; i++) {
-        contains(id, temproot->left);
-        contains(id, temproot->right);
-    }
-    std::cout << "outside for loop" << std::endl;
-    if (id == temproot->data.id) {
-        contained = true;
-    } else {
-        if (id < temproot->data.id) {
-            contains(id, temproot->left);
+    if(root){
+        if (id == temproot->data.id) {
+            contained = true;
         } else {
-            contains(id, temproot->right);
+            if (id < temproot->data.id) {
+                contains(id, temproot->left);
+            } else {
+                contains(id, temproot->right);
+            }
         }
     }
-    if ((temproot->left == nullptr || temproot->right == nullptr) && id != temproot->data.id) {}
     return contained;
 } // End of contains
 
