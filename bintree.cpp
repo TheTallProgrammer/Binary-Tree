@@ -50,7 +50,7 @@ bool BinTree::addNode(int id, const string *data){
         newNode->data.id = id;
         newNode->data.information = *data;
         didAdd = addNode(newNode, &root);
-        if(didAdd == true){
+        if(didAdd){
             count++;
         }
     }
@@ -161,7 +161,7 @@ DataNode* BinTree::removeNode(int id, DataNode *root){
 
 DataNode* BinTree::minValueNode(DataNode* node) {
     DataNode* current = node;
-    while (current && current->left != NULL) {
+    while (current && current->left != nullptr) {
         current = current->left;
     }
     return current;
