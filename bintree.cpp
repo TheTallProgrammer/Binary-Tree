@@ -63,7 +63,10 @@ bool BinTree::removeNode(int id){
 } // End of removeNode
 
 bool BinTree::getNode(Data *data, int id){
-    bool gotNode = getNode(data, id, root);
+    bool gotNode = false;
+    if(id > 0){
+        gotNode = getNode(data, id, root);
+    }
     return gotNode;
 } // End of getNode
 
