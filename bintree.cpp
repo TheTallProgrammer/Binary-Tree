@@ -167,7 +167,23 @@ DataNode* BinTree::minValueNode(DataNode* node) {
         current = current->left;
     }
     return current;
-}
+} // End of minValueNode
+
+bool BinTree::contains(int id, DataNode *temproot){
+    bool contained = false;
+    if(temproot){
+        if (id == temproot->data.id) {
+            contained = true;
+        } else {
+            if (id < temproot->data.id) {
+                return contains(id, temproot->left);
+            } else {
+                return contains(id, temproot->right);
+            }
+        }
+    }
+    return contained;
+} // End of contains
 
 bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     bool gotNode = false;
@@ -190,22 +206,6 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
     }
     return gotNode;
 } // End of getNode
-
-bool BinTree::contains(int id, DataNode *temproot){
-    bool contained = false;
-    if(temproot){
-        if (id == temproot->data.id) {
-            contained = true;
-        } else {
-            if (id < temproot->data.id) {
-                return contains(id, temproot->left);
-            } else {
-                return contains(id, temproot->right);
-            }
-        }
-    }
-    return contained;
-} // End of contains
 
 int BinTree::getHeight(DataNode *temproot){
     int lh = 0, rh = 0, maxHeight = 0;
