@@ -208,19 +208,12 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
 } // End of getNode
 
 int BinTree::getHeight(DataNode *temproot){
-    int lh = 0, rh = 0, maxHeight = 0;
+    int lh = 0, rh = 0;
     if(temproot){
-        maxHeight = getHeight(temproot->left);
-        maxHeight = getHeight(temproot->right);
-        if(lh > rh){
-            maxHeight = maxHeight + lh+1;
-        } else {
-            maxHeight = maxHeight + rh+1;
-        }
-        return maxHeight;
-    } else {
-        return 0;
+        lh = getHeight(temproot->left);
+        rh = getHeight(temproot->right);
     }
+    return std::max(lh,rh) +1;
 } // End of getHeight
 
 void BinTree::displayPreOrder(DataNode *temproot){
