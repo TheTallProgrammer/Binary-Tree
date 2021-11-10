@@ -176,9 +176,9 @@ bool BinTree::contains(int id, DataNode *temproot){
             contained = true;
         } else {
             if (id < temproot->data.id) {
-                return contains(id, temproot->left);
+                contained = contains(id, temproot->left);
             } else {
-                return contains(id, temproot->right);
+               contained = contains(id, temproot->right);
             }
         }
     }
