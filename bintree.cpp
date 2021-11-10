@@ -122,10 +122,10 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
     else{
         if(newNode->data.id < (*root)->data.id){
             std::cout << "left" << std::endl;
-            return addNode(newNode, &(*root)->left);
+            addNode(newNode, &(*root)->left);
         } else if (newNode->data.id > (*root)->data.id) {
             std::cout << "right" << std::endl;
-            return addNode(newNode, &(*root)->right);
+            addNode(newNode, &(*root)->right);
         }
     }
     return didAdd;
