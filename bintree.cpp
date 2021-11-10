@@ -194,9 +194,9 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
             gotNode = true;
         } else {
             if (id < temproot->data.id) {
-                return getNode(data, id, temproot->left);
+                gotNode = getNode(data, id, temproot->left);
             } else {
-                return getNode(data, id, temproot->right);
+                gotNode = getNode(data, id, temproot->right);
             }
         }
     }
