@@ -60,7 +60,7 @@ bool BinTree::addNode(int id, const string *data){
 bool BinTree::removeNode(int id){
     bool didRemove = false;
     int tempCount = count;
-    root = removeNode(id, root);
+//    root = removeNode(id, root);
     if(count < tempCount){
         didRemove = true;
     }
@@ -121,9 +121,9 @@ bool BinTree::addNode(DataNode *newNode, DataNode **root){
     }
     else{
         if(newNode->data.id < (*root)->data.id){
-            addNode(newNode, &(*root)->left);
+            didAdd = addNode(newNode, &(*root)->left);
         } else if (newNode->data.id > (*root)->data.id) {
-            addNode(newNode, &(*root)->right);
+            didAdd = addNode(newNode, &(*root)->right);
         }
     }
     return didAdd;
