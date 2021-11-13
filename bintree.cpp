@@ -52,7 +52,7 @@ void BinTree::displayTree(){
     displayInOrder();
     std::cout << "\nPost-Order Traversal" << std::endl;
     displayPostOrder();
-    std::cout << "==============================================" << std::endl;
+    std::cout << "==============================================\n" << std::endl;
 } // End of displayTree
 
 
@@ -240,8 +240,8 @@ int BinTree::getHeight(DataNode *temproot){
 void BinTree::displayPreOrder(DataNode *temproot){
     if(temproot){
         std::cout << temproot->data.id << " " << temproot->data.information << std::endl;
-        displayInOrder(temproot->left);
-        displayInOrder(temproot->right);
+        displayPreOrder(temproot->left);
+        displayPreOrder(temproot->right);
     }
 } // End of displayPreOrder
 
@@ -255,8 +255,8 @@ void BinTree::displayInOrder(DataNode *temproot){
 
 void BinTree::displayPostOrder(DataNode *temproot){
     if(temproot){
-        displayInOrder(temproot->left);
-        displayInOrder(temproot->right);
+        displayPostOrder(temproot->left);
+        displayPostOrder(temproot->right);
         std::cout << temproot->data.id << " " << temproot->data.information << std::endl;
     }
 } // End of displayPostOrder
