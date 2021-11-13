@@ -32,8 +32,11 @@ bool BinTree::getRootData(Data *data){
 } // End of getRootData
 
 void BinTree::displayTree(){
+    std::cout << "\nPre-Order Traversal" << std::endl;
     displayPreOrder();
+    std::cout << "\nIn-Order Traversal" << std::endl;
     displayInOrder();
+    std::cout << "\nPost-Order Traversal" << std::endl;
     displayPostOrder();
 } // End of displayTree
 
@@ -60,7 +63,7 @@ bool BinTree::addNode(int id, const string *data){
 bool BinTree::removeNode(int id){
     bool didRemove = false;
     int tempCount = count;
-//    root = removeNode(id, root);
+    root = removeNode(id, root);
     if(count < tempCount){
         didRemove = true;
     }
