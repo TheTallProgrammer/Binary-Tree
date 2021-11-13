@@ -1,7 +1,7 @@
 /*********************
 Name: Logan Falkenberg
 Coding 07
-Purpose: This is the driver file for the BinTree class. It contains all methods and their fully functional code. 
+Purpose: This is the driver file for the BinTree class. It contains all methods and their fully functional code.
 **********************/
 #include "bintree.h"
 
@@ -102,7 +102,6 @@ bool BinTree::contains(int id){
     if(id > 0){
         contained = contains(id, root);
     }
-
     return contained;
 } // End of contains
 
