@@ -127,54 +127,56 @@ void BinTree::clear(DataNode *temproot){
         temproot->left = nullptr;
         temproot->right = nullptr;
         delete temproot;
+        std::cout << "deleted temproot id: " << temproot->data.id << std::endl;
         count--;
     }
+    return;
 } // End of clear
 
-bool BinTree::addNode(DataNode *newNode, DataNode **root){
+bool BinTree::addNode(DataNode *newNode, DataNode **temproot){
     bool didAdd = false;
-    if(!(*root)){
-        *root = newNode;
+    if(!(*temproot)){
+        (*temproot) = newNode;
         didAdd = true;
-    }
-    else{
-        if(newNode->data.id < (*root)->data.id){
-            didAdd = addNode(newNode, &(*root)->left);
-        } else if (newNode->data.id > (*root)->data.id) {
-            didAdd = addNode(newNode, &(*root)->right);
+    } else {
+        if(newNode->data.id < (*temproot)->data.id){
+            didAdd = addNode(newNode, &(*temproot)->left);
+        }
+        else if (newNode->data.id > (*temproot)->data.id) {
+            didAdd = addNode(newNode, &(*temproot)->right);
         }
     }
     return didAdd;
 
 } // End of addNode
 
-DataNode* BinTree::removeNode(int id, DataNode *root){
-    if(root){
-        if(id < root->data.id){
-            root->left = removeNode(id, root->left);
+DataNode* BinTree::removeNode(int id, DataNode *temproot){
+    if(temproot){
+        if(id < temproot->data.id){
+            temproot->left = removeNode(id, temproot->left);
         } else if (id > root->data.id){
-            root->right = removeNode(id, root->right);
+            temproot->right = removeNode(id, temproot->right);
         } else {
             DataNode *temp;
-            if(root->left == nullptr){
-                temp = root->right;
-                delete root;
-                root = temp;
-                count--;
-            } else if (root->right == nullptr){
-                temp = root->left;
-                delete root;
-                root = temp;
+            if(temproot->left == nullptr){
+                temp = temproot->right;
+                delete temproot;
+                temproot = temp;
+                temproot--;
+            } else if (temproot->right == nullptr){
+                temp = temproot->left;
+                delete temproot;
+                temproot = temp;
                 count--;
             } else {
-                temp = minValueNode(root->right);
-                root->data.id = temp->data.id;
-                root->data.information = temp->data.information;
-                root->right = removeNode(temp->data.id, root->right);
+                temp = minValueNode(temproot->right);
+                temproot->data.id = temp->data.id;
+                temproot->data.information = temp->data.information;
+                temproot->right = removeNode(temp->data.id, temproot->right);
             }
         }
     }
-    return root;
+    return temproot;
 } // End of removeNode
 
 DataNode* BinTree::minValueNode(DataNode* node) {
