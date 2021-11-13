@@ -68,6 +68,8 @@ bool BinTree::addNode(int id, const string *data){
         DataNode *newNode = new DataNode;
         newNode->data.id = id;
         newNode->data.information = *data;
+        newNode->left = nullptr;
+        newNode->right = nullptr;
         didAdd = addNode(newNode, &(root));
         if(didAdd){
             count++;
