@@ -38,8 +38,7 @@ bool BinTree::getRootData(Data *data){
 } // End of getRootData
 
 void BinTree::displayTree(){
-    std::cout << "DISPLAY TREE" << std::endl;
-    std::cout << "==============================================" << std::endl;
+    std::cout << "DISPLAY TREE\n=============================================="<< std::endl;
     if(isEmpty()){
         std::cout << "Tree is empty" << std::endl;
     } else {
@@ -47,13 +46,13 @@ void BinTree::displayTree(){
     }
     std::cout << "Height: " << getHeight() << std::endl;
     std::cout << "Node Count: " << getCount() << std::endl;
-
     std::cout << "\nPre-Order Traversal" << std::endl;
     displayPreOrder();
     std::cout << "\nIn-Order Traversal" << std::endl;
     displayInOrder();
     std::cout << "\nPost-Order Traversal" << std::endl;
     displayPostOrder();
+    std::cout << "==============================================" << std::endl;
 } // End of displayTree
 
 
