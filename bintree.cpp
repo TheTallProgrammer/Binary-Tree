@@ -16,7 +16,13 @@ BinTree::~BinTree(){
 
 
 // Public methods
-bool BinTree::isEmpty(){return root;} // End of isEmpty
+bool BinTree::isEmpty(){
+    bool isEmpty = true;
+    if(root){
+        isEmpty = false;
+    }
+    return isEmpty;
+} // End of isEmpty
 
 int BinTree::getCount(){return count;} // End of getCount
 
@@ -32,6 +38,16 @@ bool BinTree::getRootData(Data *data){
 } // End of getRootData
 
 void BinTree::displayTree(){
+    std::cout << "DISPLAY TREE" << std::endl;
+    std::cout << "==============================================" << std::endl;
+    if(isEmpty()){
+        std::cout << "Tree is empty" << std::endl;
+    } else {
+        std::cout << "Tree is NOT empty" << std::endl;
+    }
+    std::cout << "Height: " << getHeight() << std::endl;
+    std::cout << "Node Count: " << getCount() << std::endl;
+
     std::cout << "\nPre-Order Traversal" << std::endl;
     displayPreOrder();
     std::cout << "\nIn-Order Traversal" << std::endl;
@@ -63,7 +79,7 @@ bool BinTree::addNode(int id, const string *data){
 bool BinTree::removeNode(int id){
     bool didRemove = false;
     int tempCount = count;
-    root = removeNode(id, root);
+//    root = removeNode(id, root);
     if(count < tempCount){
         didRemove = true;
     }
@@ -209,12 +225,13 @@ bool BinTree::getNode(Data *data, int id, DataNode *temproot){
 } // End of getNode
 
 int BinTree::getHeight(DataNode *temproot){
-    int lh = 0, rh = 0;
+    int lh = 0, rh = 0, maxHeight = 0;
     if(temproot){
         lh = getHeight(temproot->left);
         rh = getHeight(temproot->right);
+        maxHeight = std::max(lh,rh) +1;
     }
-    return std::max(lh,rh) +1;
+    return maxHeight;
 } // End of getHeight
 
 void BinTree::displayPreOrder(DataNode *temproot){
