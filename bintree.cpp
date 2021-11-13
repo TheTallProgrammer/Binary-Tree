@@ -132,7 +132,6 @@ void BinTree::clear(DataNode *temproot){
         delete temproot;
         count--;
     }
-    return;
 } // End of clear
 
 bool BinTree::addNode(DataNode *newNode, DataNode **temproot){
@@ -149,7 +148,6 @@ bool BinTree::addNode(DataNode *newNode, DataNode **temproot){
         }
     }
     return didAdd;
-
 } // End of addNode
 
 DataNode* BinTree::removeNode(int id, DataNode *temproot){
