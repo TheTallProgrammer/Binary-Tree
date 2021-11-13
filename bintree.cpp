@@ -59,6 +59,7 @@ void BinTree::displayTree(){
 // Public methods that will call overload methods
 void BinTree::clear() {
     clear(root);
+    root = nullptr;
 } // End of clear
 
 bool BinTree::addNode(int id, const string *data){
@@ -67,7 +68,7 @@ bool BinTree::addNode(int id, const string *data){
         DataNode *newNode = new DataNode;
         newNode->data.id = id;
         newNode->data.information = *data;
-        didAdd = addNode(newNode, &root);
+        didAdd = addNode(newNode, &(root));
         if(didAdd){
             count++;
         }
@@ -139,10 +140,10 @@ bool BinTree::addNode(DataNode *newNode, DataNode **temproot){
         didAdd = true;
     } else {
         if(newNode->data.id < (*temproot)->data.id){
-            didAdd = addNode(newNode, &(*temproot)->left);
+            didAdd = addNode(newNode, &((*temproot)->left));
         }
         else if (newNode->data.id > (*temproot)->data.id) {
-            didAdd = addNode(newNode, &(*temproot)->right);
+            didAdd = addNode(newNode, &((*temproot)->right));
         }
     }
     return didAdd;
