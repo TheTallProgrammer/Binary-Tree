@@ -1,6 +1,8 @@
-/*
- * Your comment header here
- */
+/*********************
+Name: Logan Falkenberg
+Coding 07
+Purpose: Header file for bintree.cpp. Contains the BinTree class and its associated methods/attributes.
+**********************/
 
 #ifndef BINTREE_BINTREE_H
 #define BINTREE_BINTREE_H

@@ -1,7 +1,8 @@
-/*
- * Your comment header here
- */
-
+/*********************
+Name: Logan Falkenberg
+Coding 07
+Purpose: This is the driver file for the BinTree class. It contains all methods and their fully functional code. 
+**********************/
 #include "bintree.h"
 
 // Constructor/Destructor
