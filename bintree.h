@@ -42,7 +42,7 @@ class BinTree{
         void displayPreOrder(DataNode *);
         void displayPostOrder(DataNode *);
         void displayInOrder(DataNode *);
-        
+
     private:
         DataNode *root;
         int count;
