@@ -127,7 +127,6 @@ void BinTree::clear(DataNode *temproot){
         temproot->left = nullptr;
         temproot->right = nullptr;
         delete temproot;
-        std::cout << "deleted temproot id: " << temproot->data.id << std::endl;
         count--;
     }
     return;
